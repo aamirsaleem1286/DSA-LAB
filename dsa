@@ -1,0 +1,102 @@
+#include<iostream>
+using namespace std;
+int main(){
+ int size;
+ int array[size];
+ int i;
+ int j,store,passed=0;
+ cout<<"Enter the Array Size : ";
+ cin>>size;
+ cout<<"\nYou Can insert the Array value till Array["<<size-1<<"] size\n\n";
+ for(i=0;i<size;i++){
+ 	cout<<"Enter the array value at ["<<i<<"] index : ";
+ 	cin>>array[i];
+ }
+ for(i=0;i<size;i++){
+ for(j=i+1;j<5;j++){
+ if(array[j]<array[i]){
+ 	store=array[i];
+ 	array[i]=array[j];
+  	array[j]=store;
+ } }
+ passed++;
+}
+cout<<"\nThe Array After Bubble sorting : \n";
+ for(i=0;i<size;i++){
+ 	cout<<"\nThe array ["<<i<<"]"<<array[i];
+ }
+ return 0;
+ }
+ 
+ //INSERTION
+ #include<iostream>
+using namespace std;
+int main(){
+	int array[5]={20,10,24,46,8};
+	int i, foundElement, j,size;
+	cout<<"Input the array size : ";
+    cin>>size;
+    cout<<"\n";
+
+	for(int i=0;i<size;i++){
+	cout<<"Enter the value of  array  index ["<<i<<"] : ";
+	cin>>array[i];	
+}
+	for (i = 1; i < size; i++)
+    {
+        foundElement = array[i];
+        j = i - 1;
+        while (j >= 0 && array[j] > foundElement)
+        {
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+        array[j + 1] = foundElement;
+    }
+	cout<<"\nAfter Insert sorting the element \n";
+	for(int i=0;i<size;i++){
+	cout<<"\nThe array ["<<i<<"]"<<array[i];	
+}
+	return 0;
+}
+
+// SORT
+#include<iostream>
+using namespace std;
+int main()
+{
+    int size; 
+    int array[70];
+    int i, j, store, sort, check, index;
+	cout<<"Enter the Size of Array: ";
+    cin>>size;
+    cout<<"\nYou can insert array value at "<<size-1<<" index \n\n";
+	for(i=0;i<size;i++){
+    	cout<<"The Array["<<i<<"] : ";
+		cin>>array[i];
+	}
+    for(i=0; i<(size); i++)
+    {
+        check=0;
+        sort = array[i];
+        for(j=(i+1); j<size; j++)
+        {
+            if(sort>array[j])
+            {
+                sort = array[j];
+                check++;
+                index = j; 
+            }
+        }
+        if(check!=0)
+        {
+            store = array[i];
+            array[i] = sort;
+            array[index] = store;
+        }
+    }
+    cout<<"\nThe Array after selection Sorted Are: \n";
+    for(i=0; i<size; i++)
+        cout<<"The Array at ["<<i<<"] : "<<array[i]<<"\n";
+    return 0;
+}
